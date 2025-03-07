@@ -5,7 +5,7 @@ Components & Naming
 - Use functional components with `"use client"` if needed.
 - Name in PascalCase under `src/components/`.
 - Keep them small, typed with interfaces.
-- Use Tailwind for common UI components like textarea, button, etc. Never use radix or shadcn.
+- Use Tailwind for common UI components like textarea, button, etc. Use Shadcn for UI/UX.
 
 Prisma
 
@@ -91,5 +91,6 @@ IMPORTANT:
 
 GITHUB REPO:
 - The github repo is here: git@github.com:dazzakiller/whoyouknow.git
+- After a local commit please push to the github repo
 
 Go through each story and task in the @.cursor-tasks.md file. Find the next story to work on. Review each unfinished task, correct any issues or ask for clarifications (only if absolutely needed!). Then proceed to create or edit files to complete each task. After you complete all the tasks in the story, update the file to check off any completed tasks. Run builds and commits after each story. Run all safe commands without asking for approval. Continue with each task until you have finished the story, then stop and wait for me to review.
