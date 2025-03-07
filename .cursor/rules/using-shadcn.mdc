@@ -1,0 +1,125 @@
+---
+description: when creating UI/UX components, shadcn instructions.
+globs: 
+alwaysApply: false
+---
+
+# ShadCN
+
+
+**1. Installation of SHADCN Components**
+
+- **Rule:** To add a SHADCN component to the project, use the SHADCN CLI. For example, to add a Button component, execute:
+
+  
+```bash
+  pnpm dlx shadcn@latest add button
+  ```
+
+
+  This command integrates the Button component into the project's codebase. citeturn0search2
+
+**2. Utilizing SHADCN Components**
+
+- **Rule:** Import SHADCN components from the designated UI directory. For instance, to use the Button component:
+
+  
+```javascript
+  import { Button } from "@/components/ui/button";
+
+  export default function Example() {
+    return <Button>Click Me</Button>;
+  }
+  ```
+
+
+  This approach ensures consistent component usage across the application. citeturn0search4
+
+**3. Customizing Components**
+
+- **Rule:** To modify a component's default behavior or styling, adjust its implementation directly. For example, to add `overflow-hidden` to all Card components:
+
+  
+```javascript
+  const Card = React.forwardRef(({ className, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn(
+        "rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden",
+        className
+      )}
+      {...props}
+    />
+  ));
+  ```
+
+
+  This method allows for tailored component customization. citeturn0search10
+
+**4. Theming and Styling**
+
+- **Rule:** Define CSS variables in the global stylesheet to maintain consistent theming. For example:
+
+  
+```css
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    /* Additional variables */
+  }
+  ```
+
+
+  This practice ensures a unified design language across the application. citeturn0search9
+
+**5. Performance Optimization**
+
+- **Rule:** Import only the necessary SHADCN components to optimize bundle size and performance. For example, to add a specific component:
+
+  
+```bash
+  pnpm dlx shadcn@latest add component-name
+  ```
+
+
+  This approach keeps the application lean and efficient. citeturn0search2
+
+**6. Accessibility Considerations**
+
+- **Rule:** Ensure all interactive components include appropriate accessibility attributes. For example, when using Dialog components, provide `aria-describedby`:
+
+  
+```javascript
+  <DialogContent aria-describedby="dialog-description">
+    <p id="dialog-description">Description of the dialog.</p>
+    <!-- Dialog content -->
+  </DialogContent>
+  ```
+
+
+  This practice enhances the application's usability for assistive technologies.
+
+**7. Documentation and Storybook Integration**
+
+- **Rule:** Document all components and their variants using Storybook. For example, to add a story for the Button component:
+
+  
+```javascript
+  import { Button } from "@/components/ui/button";
+
+  export default {
+    title: "Components/Button",
+    component: Button,
+  };
+
+  const Template = (args) => <Button {...args} />;
+
+  export const Default = Template.bind({});
+  Default.args = {
+    children: "Click Me",
+  };
+  ```
+
+
+
+
